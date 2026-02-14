@@ -1,0 +1,8 @@
+{
+    "Aliases": [
+        "www.brownrook.com",
+        "brownrook.com"
+    ],
+    "ViewerProtocolPolicy": "redirect-to-https",
+    "Compress": true
+}
