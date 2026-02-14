@@ -3,6 +3,16 @@
         "www.brownrook.com",
         "brownrook.com"
     ],
+    "Origins": [
+        "www.brownrook.com.s3.ca-central-1.amazonaws.com"
+    ],
     "ViewerProtocolPolicy": "redirect-to-https",
-    "Compress": true
+    "Compress": true,
+    "AllowedMethods": [
+        "HEAD",
+        "GET"
+    ],
+    "CachePolicyId": "658327ea-f89d-4fab-a63d-7e88639e58f6",
+    "OriginAccessControlId": "E2429LY2XVTK4V",
+    "DefaultRootObject": "index.html"
 }

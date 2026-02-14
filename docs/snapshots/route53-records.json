@@ -1,0 +1,178 @@
+{
+    "ResourceRecordSets": [
+        {
+            "Name": "brownrook.com.",
+            "Type": "A",
+            "AliasTarget": {
+                "HostedZoneId": "Z2FDTNDATAQYW2",
+                "DNSName": "dbggo23hkxzzg.cloudfront.net.",
+                "EvaluateTargetHealth": false
+            }
+        },
+        {
+            "Name": "brownrook.com.",
+            "Type": "AAAA",
+            "AliasTarget": {
+                "HostedZoneId": "Z2FDTNDATAQYW2",
+                "DNSName": "dbggo23hkxzzg.cloudfront.net.",
+                "EvaluateTargetHealth": false
+            }
+        },
+        {
+            "Name": "brownrook.com.",
+            "Type": "MX",
+            "TTL": 3600,
+            "ResourceRecords": [
+                {
+                    "Value": "0 brownrook-com.mail.protection.outlook.com"
+                }
+            ]
+        },
+        {
+            "Name": "brownrook.com.",
+            "Type": "NS",
+            "TTL": 172800,
+            "ResourceRecords": [
+                {
+                    "Value": "ns-754.awsdns-30.net."
+                },
+                {
+                    "Value": "ns-422.awsdns-52.com."
+                },
+                {
+                    "Value": "ns-1601.awsdns-08.co.uk."
+                },
+                {
+                    "Value": "ns-1488.awsdns-58.org."
+                }
+            ]
+        },
+        {
+            "Name": "brownrook.com.",
+            "Type": "SOA",
+            "TTL": 900,
+            "ResourceRecords": [
+                {
+                    "Value": "ns-754.awsdns-30.net. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400"
+                }
+            ]
+        },
+        {
+            "Name": "brownrook.com.",
+            "Type": "TXT",
+            "TTL": 86400,
+            "ResourceRecords": [
+                {
+                    "Value": "\"MS=ms17683477\""
+                },
+                {
+                    "Value": "\"v=spf1 include:spf.protection.outlook.com -all\""
+                },
+                {
+                    "Value": "\"atlassian-sending-domain-verification=fb31df3c-1604-40d0-8922-3d3477b3788d\""
+                },
+                {
+                    "Value": "\"atlassian-domain-verification=8SUDX9LEpOWHMU6Df1g3WCVke9skkvw2a8l3c64B6axYoXyTUScGJE9IYCCo9rLC\""
+                }
+            ]
+        },
+        {
+            "Name": "_4d9a540e4a8823524d3b5e886c61a4f1.brownrook.com.",
+            "Type": "CNAME",
+            "TTL": 300,
+            "ResourceRecords": [
+                {
+                    "Value": "_f6f5b6efa20ee31d779e4ada58cd967f.jkddzztszm.acm-validations.aws."
+                }
+            ]
+        },
+        {
+            "Name": "_dmarc.brownrook.com.",
+            "Type": "TXT",
+            "TTL": 300,
+            "ResourceRecords": [
+                {
+                    "Value": "\"v=DMARC1; p=quarantine; rua=mailto:paul@brownrook.com; fo=1\""
+                }
+            ]
+        },
+        {
+            "Name": "atlassian-fb4abd._domainkey.brownrook.com.",
+            "Type": "CNAME",
+            "TTL": 300,
+            "ResourceRecords": [
+                {
+                    "Value": "atlassian-fb4abd.dkim.atlassian.net."
+                }
+            ]
+        },
+        {
+            "Name": "atlassian-fc9913._domainkey.brownrook.com.",
+            "Type": "CNAME",
+            "TTL": 300,
+            "ResourceRecords": [
+                {
+                    "Value": "atlassian-fc9913.dkim.atlassian.net."
+                }
+            ]
+        },
+        {
+            "Name": "atlassian-bounces.brownrook.com.",
+            "Type": "CNAME",
+            "TTL": 300,
+            "ResourceRecords": [
+                {
+                    "Value": "bounces.mail-us.atlassian.net."
+                }
+            ]
+        },
+        {
+            "Name": "autodiscover.brownrook.com.",
+            "Type": "CNAME",
+            "TTL": 3600,
+            "ResourceRecords": [
+                {
+                    "Value": "autodiscover.outlook.com"
+                }
+            ]
+        },
+        {
+            "Name": "idc.brownrook.com.",
+            "Type": "A",
+            "TTL": 60,
+            "ResourceRecords": [
+                {
+                    "Value": "142.161.48.86"
+                }
+            ]
+        },
+        {
+            "Name": "www.brownrook.com.",
+            "Type": "A",
+            "AliasTarget": {
+                "HostedZoneId": "Z2FDTNDATAQYW2",
+                "DNSName": "dbggo23hkxzzg.cloudfront.net.",
+                "EvaluateTargetHealth": false
+            }
+        },
+        {
+            "Name": "www.brownrook.com.",
+            "Type": "AAAA",
+            "AliasTarget": {
+                "HostedZoneId": "Z2FDTNDATAQYW2",
+                "DNSName": "dbggo23hkxzzg.cloudfront.net.",
+                "EvaluateTargetHealth": false
+            }
+        },
+        {
+            "Name": "_55ee9b6c1030ea2bb56f9b917679645a.www.brownrook.com.",
+            "Type": "CNAME",
+            "TTL": 300,
+            "ResourceRecords": [
+                {
+                    "Value": "_80dc2d53a85e53f563ed64a36ca0e64b.jkddzztszm.acm-validations.aws."
+                }
+            ]
+        }
+    ]
+}
