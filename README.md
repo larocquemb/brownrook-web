@@ -79,4 +79,11 @@ brownrook.com → Organizational landing site (high availability)
 
 idc.brownrook.com → Physical site ingress (dynamic residential IP)
 
-All internal and homelab services exist under:
+## Public Certificates
+
+The bucket also contains publish-safe public certificates:
+
+- `s3://www.brownrook.com/certificates/`
+
+This prefix is **public material only** (leaf certs, intermediates, roots, public keys).
+Private keys (`.key`, `.p12`, `.pfx`) must never be stored or committed.
