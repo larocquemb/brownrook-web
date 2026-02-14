@@ -86,16 +86,6 @@
         ]
     },
     {
-        "Name": "idc.brownrook.com.",
-        "Type": "A",
-        "TTL": 60,
-        "ResourceRecords": [
-            {
-                "Value": "142.161.48.86"
-            }
-        ]
-    },
-    {
         "Name": "www.brownrook.com.",
         "Type": "A",
         "AliasTarget": {
