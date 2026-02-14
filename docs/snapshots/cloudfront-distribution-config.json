@@ -1,11 +1,12 @@
 {
-    "ETag": "E3UN6WX5RRO2AG",
+    "ETag": "E1F83G8C2ARO7P",
     "DistributionConfig": {
         "CallerReference": "8e5a5788-5415-45a1-89ed-02bb9a352369",
         "Aliases": {
-            "Quantity": 1,
+            "Quantity": 2,
             "Items": [
-                "www.brownrook.com"
+                "www.brownrook.com",
+                "brownrook.com"
             ]
         },
         "DefaultRootObject": "index.html",
