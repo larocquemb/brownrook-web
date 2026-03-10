@@ -1,0 +1,40 @@
+[ ca ]
+default_ca = CA_default
+
+[ CA_default ]
+unique_subject = no
+
+# Absolute paths so openssl ca can run from any directory
+dir            = /Users/paul/Developer/brownrook/brownrook-pki/pki/intermediate
+database       = $dir/index.txt
+new_certs_dir  = $dir/newcerts
+serial         = $dir/serial
+
+certificate    = $dir/intermediate_ca.crt
+private_key    = $ENV::INT_CA_KEY_URI
+
+default_md      = sha384
+default_days    = 365
+policy          = policy_any
+copy_extensions = copy
+
+[ policy_any ]
+countryName             = supplied
+organizationName        = optional
+organizationalUnitName  = optional
+commonName              = supplied
+emailAddress            = optional
+
+[ smime_cert ]
+basicConstraints = critical, CA:FALSE
+keyUsage = critical, digitalSignature, keyEncipherment
+extendedKeyUsage = emailProtection
+subjectKeyIdentifier = hash
+authorityKeyIdentifier = keyid,issuer
+
+[ server_cert ]
+basicConstraints = critical, CA:FALSE
+keyUsage = critical, digitalSignature, keyEncipherment
+extendedKeyUsage = serverAuth
+subjectKeyIdentifier = hash
+authorityKeyIdentifier = keyid,issuer

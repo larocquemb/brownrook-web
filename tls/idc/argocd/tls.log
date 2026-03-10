@@ -1,0 +1,51 @@
+openssl genrsa -out argocd.brownrook.net.key 4096
+
+openssl req -new -key argocd.brownrook.net.key -out argocd.brownrook.net.csr -config argocd.cnf
+
+àexport OPENSSL_MODULES="/opt/homebrew/opt/openssl@3/lib/ossl-modules"
+export OPENSSL_CONF="/Users/paul/brownrook-ca/id/openssl-pkcs11.cnf"
+openssl list -providers
+
+
+openssl storeutl -keys -text pkcs11:
+Enter pass phrase for PKCS#11 Token (Slot 0 - Yubico YubiKey OTP+FIDO+CCID 01):
+0: Pkey
+PKCS11 EC Private Key (384 bits)
+[Can't export and print private key data]
+URI pkcs11:model=PKCS%2315%20emulated;manufacturer=piv_II;serial=bce121959172aac1;token=Brown%20Rook%20Intermediate%20CA;id=%02;object=SIGN%20key;type=private
+Total found: 1
+paul@m4pro argocd % 
+
+export INT_CA_KEY_URI='pkcs11:model=PKCS%2315%20emulated;manufacturer=piv_II;serial=bce121959172aac1;token=Brown%20Rook%20Intermediate%20CA;id=%02;object=SIGN%20key;type=private'
+
+mkdir -p ~/Developer/brownrook/brownrook-pki/pki/intermediate/newcerts
+touch ~/Developer/brownrook/brownrook-pki/pki/intermediate/index.txt
+[ -f ~/Developer/brownrook/brownrook-pki/pki/intermediate/serial ] || echo 1000 > ~/Developer/brownrook/brownrook-pki/pki/intermediate/serial
+
+openssl ca \
+  -provider pkcs11 \
+  -provider default \
+  -config intermediate-ca.cnf \
+  -cert ~/Developer/brownrook/brownrook-pki/pki/intermediate/intermediate_ca.crt \
+  -keyfile "$INT_CA_KEY_URI" \
+  -extensions server_cert \
+  -extfile argocd-ext.cnf \
+  -in argocd.brownrook.net.csr \
+  -out argocd.brownrook.net.crt \
+  -batch \
+  -notext
+
+cat argocd.brownrook.net.crt \
+  ~/Developer/brownrook/brownrook-pki/pki/intermediate/intermediate_ca.crt \
+  > argocd.brownrook.net.fullchain.crt
+
+
+awk 'BEGIN{n=0} /BEGIN CERTIFICATE/{n++} {print > ("/tmp/cert" n ".pem")}' argocd.brownrook.net.fullchain.crt
+openssl x509 -in /tmp/cert1.pem -noout -subject -issuer
+openssl x509 -in /tmp/cert2.pem -noout -subject -issuer
+
+
+kubectl -n argocd create secret tls argocd-server-tls \
+  --cert=argocd.brownrook.net.fullchain.crt \
+  --key=argocd.brownrook.net.key \
+  --dry-run=client -o yaml > argocd-server-tls-secret.yaml

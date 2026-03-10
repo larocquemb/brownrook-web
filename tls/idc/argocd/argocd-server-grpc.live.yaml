@@ -1,0 +1,50 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  annotations:
+    kubectl.kubernetes.io/last-applied-configuration: |
+      {"apiVersion":"networking.k8s.io/v1","kind":"Ingress","metadata":{"annotations":{"traefik.ingress.kubernetes.io/router.entrypoints":"websecure","traefik.ingress.kubernetes.io/router.priority":"11","traefik.ingress.kubernetes.io/router.rule":"(Host(`argocd.idc.brownrook.com`) || Host(`argocd.brownrook.net`)) \u0026\u0026 Header(`Content-Type`,`application/grpc`)","traefik.ingress.kubernetes.io/router.tls":"true","traefik.ingress.kubernetes.io/service.serversscheme":"h2c"},"name":"argocd-server-grpc","namespace":"argocd"},"spec":{"ingressClassName":"traefik","rules":[{"host":"argocd.idc.brownrook.com","http":{"paths":[{"backend":{"service":{"name":"argocd-server","port":{"number":80}}},"path":"/","pathType":"Prefix"}]}},{"host":"argocd.brownrook.net","http":{"paths":[{"backend":{"service":{"name":"argocd-server","port":{"number":80}}},"path":"/","pathType":"Prefix"}]}}],"tls":[{"hosts":["argocd.idc.brownrook.com","argocd.brownrook.net"],"secretName":"argocd-idc-brownrook-com-tls"}]}}
+    traefik.ingress.kubernetes.io/router.entrypoints: websecure
+    traefik.ingress.kubernetes.io/router.priority: "11"
+    traefik.ingress.kubernetes.io/router.rule: (Host(`argocd.idc.brownrook.com`) ||
+      Host(`argocd.brownrook.net`)) && Header(`Content-Type`,`application/grpc`)
+    traefik.ingress.kubernetes.io/router.tls: "true"
+    traefik.ingress.kubernetes.io/service.serversscheme: h2c
+  creationTimestamp: "2026-03-10T10:16:37Z"
+  generation: 2
+  name: argocd-server-grpc
+  namespace: argocd
+  resourceVersion: "458520"
+  uid: d90879ca-ba5b-4db2-9243-db98298c172e
+spec:
+  ingressClassName: traefik
+  rules:
+  - host: argocd.idc.brownrook.com
+    http:
+      paths:
+      - backend:
+          service:
+            name: argocd-server
+            port:
+              number: 80
+        path: /
+        pathType: Prefix
+  - host: argocd.brownrook.net
+    http:
+      paths:
+      - backend:
+          service:
+            name: argocd-server
+            port:
+              number: 80
+        path: /
+        pathType: Prefix
+  tls:
+  - hosts:
+    - argocd.idc.brownrook.com
+    - argocd.brownrook.net
+    secretName: argocd-server-tls
+status:
+  loadBalancer:
+    ingress:
+    - ip: 192.168.2.240
