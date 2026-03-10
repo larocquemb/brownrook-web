@@ -7,7 +7,7 @@ req_extensions = req_ext
 
 [ dn ]
 C = CA
-O = BrownRook
+O = Brown Rook
 CN = argocd.brownrook.net
 
 [ req_ext ]
