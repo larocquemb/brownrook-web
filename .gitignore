@@ -5,3 +5,11 @@
 *.pfx
 *.pem.key
 
+
+# sensitive files
+*.key
+*.pem
+*.p12
+*.pfx
+id_rsa
+id_ed25519
