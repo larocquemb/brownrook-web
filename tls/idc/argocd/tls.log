@@ -44,7 +44,7 @@ awk 'BEGIN{n=0} /BEGIN CERTIFICATE/{n++} {print > ("/tmp/cert" n ".pem")}' argoc
 openssl x509 -in /tmp/cert1.pem -noout -subject -issuer
 openssl x509 -in /tmp/cert2.pem -noout -subject -issuer
 
-
+# delete yaml file after and don't commit to Git
 kubectl -n argocd create secret tls argocd-server-tls \
   --cert=argocd.brownrook.net.fullchain.crt \
   --key=argocd.brownrook.net.key \
