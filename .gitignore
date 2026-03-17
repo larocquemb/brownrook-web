@@ -1,15 +1,22 @@
+# macOS
 .DS_Store
-# Never commit key material
-*.key
-*.p12
-*.pfx
-*.pem.key
 
-
-# sensitive files
+# Private key material
 *.key
 *.pem
 *.p12
 *.pfx
+*.csr
+
+# SSH keys
 id_rsa
 id_ed25519
+
+# Raw Kubernetes secrets
+*secret*.yaml
+*secret*.yml
+secrets/**
+tls/**
+
+!tls/**/*.crt
+!tls/**/*.cer

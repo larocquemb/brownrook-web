@@ -3,14 +3,12 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Brown Rook — Under Construction</title>
+  <title>BrownRook</title>
 
-  <meta name="description" content="Brown Rook - Currently under construction." />
+  <meta name="description" content="BrownRook public web, infrastructure, and service architecture." />
   <meta name="robots" content="index, follow" />
 
   <style>
-    :root { color-scheme: light dark; }
-
     body {
       margin: 0;
       min-height: 100vh;
@@ -38,17 +36,6 @@
       margin-bottom: 1.25rem;
     }
 
-    .badge {
-      display: inline-block;
-      padding: 0.35rem 0.75rem;
-      margin-bottom: 1rem;
-      font-size: 0.85rem;
-      border-radius: 999px;
-      background: rgba(56, 189, 248, 0.15);
-      border: 1px solid rgba(56, 189, 248, 0.35);
-      color: #bae6fd;
-    }
-
     h1 {
       margin: 0 0 0.25rem;
       font-size: 2.2rem;
@@ -56,18 +43,33 @@
     }
 
     .subtitle {
-      margin: 0 0 1.25rem;
+      margin: 0 0 1.5rem;
       color: rgba(229, 231, 235, 0.75);
       font-size: 1.05rem;
     }
 
-    p {
-      line-height: 1.6;
-      margin: 0 0 1rem;
+    .section {
+      margin: 1.5rem 0;
+    }
+
+    .section h2 {
+      margin: 0 0 0.75rem;
+      font-size: 1.2rem;
+      color: #bae6fd;
+    }
+
+    ul {
+      margin: 0.25rem 0 0;
+      padding-left: 1.2rem;
+    }
+
+    li {
+      margin: 0.45rem 0;
+      line-height: 1.5;
     }
 
     .contact {
-      margin-top: 1.5rem;
+      margin-top: 1.75rem;
       padding-top: 1rem;
       border-top: 1px solid rgba(255,255,255,0.15);
       font-size: 0.95rem;
@@ -102,20 +104,42 @@
     <!-- Logo -->
     <img src="logo-fs8.png" alt="Brown Rook logo" class="logo" />
 
-    <span class="badge">Under construction</span>
-
     <h1>Brown Rook</h1>
-    <p class="subtitle">Paul&nbsp;La&nbsp;Rocque</p>
+    <p class="subtitle">Public infrastructure and systems architecture</p>
 
-    <p>
-      This site is currently being built.
-    </p>
+    <section class="section">
+      <h2>BrownRook</h2>
+      <ul>
+        <li><strong>What it is:</strong> an infrastructure and systems architecture practice focused on reliable, secure, and observable platforms.</li>
+        <li><strong>What we are building:</strong> an integrated stack for web presence, edge operations, identity, PKI, and infrastructure automation.</li>
+      </ul>
+    </section>
 
-    <p>
-      Brown Rook is a consulting corporation focused on
-      infrastructure, networking, and systems architecture,
-      spanning on-prem and cloud environments.
-    </p>
+    <section class="section">
+      <h2>Projects</h2>
+      <ul>
+        <li><a href="https://github.com/larocquemb/brownrook-web"><code>brownrook-web</code></a></li>
+        <li><a href="https://github.com/larocquemb/brownrook-infra"><code>brownrook-infra</code></a></li>
+        <li><a href="https://github.com/larocquemb/brownrook-pki"><code>brownrook-pki</code></a></li>
+        <li><a href="https://github.com/larocquemb/brownrook-edge"><code>brownrook-edge</code></a></li>
+        <li><a href="https://github.com/larocquemb/brownrook-idc"><code>brownrook-idc</code></a></li>
+      </ul>
+    </section>
+
+    <section class="section">
+      <h2>Live Services</h2>
+      <ul>
+        <li>ArgoCD (internal service)</li>
+        <li><a href="/certificates/certificates-index.html">Certificate repository / trust chain page</a></li>
+      </ul>
+    </section>
+
+    <section class="section">
+      <h2>Architecture</h2>
+      <ul>
+        <li><a href="/docs/architecture/public-web.md">Public web architecture documentation</a></li>
+      </ul>
+    </section>
 
     <div class="contact">
       <p>
@@ -127,7 +151,7 @@
 
     <footer>
       © 2026 Brown Rook · www.brownrook.com
-      <a href="/certificates/index.html">Public Certificates</a>
+      <a href="/certificates/certificates-index.html">Public Certificates</a>
     </footer>
 
   </main>

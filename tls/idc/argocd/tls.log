@@ -49,3 +49,11 @@ kubectl -n argocd create secret tls argocd-server-tls \
   --cert=argocd.brownrook.net.fullchain.crt \
   --key=argocd.brownrook.net.key \
   --dry-run=client -o yaml > argocd-server-tls-secret.yaml
+
+kubectl -n argocd delete secret argocd-server-tls   
+
+kubectl -n argocd create secret tls argocd-server-tls \                                        
+  --cert=argocd.brownrook.net.fullchain.crt \
+  --key=argocd.brownrook.net.key
+
+kubectl -n kube-system rollout restart deployment traefik 
