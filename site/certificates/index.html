@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>BrownRook Public Certificates</title>
+  <style>
+    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; margin: 2rem; line-height: 1.45; }
+    h1 { margin-bottom: 0.25rem; }
+    .note { color: #444; margin-top: 0; }
+    code { background: #f3f3f3; padding: 0.12rem 0.35rem; border-radius: 6px; }
+    ul { padding-left: 1.2rem; }
+    li { margin: 0.25rem 0; }
+    hr { margin: 1.5rem 0; }
+    .small { font-size: 0.92rem; color: #444; }
+  </style>
+</head>
+<body>
+  <h1>Public Certificates</h1>
+  <p class="note">Downloadable public certificates and CA chain material.</p>
+
+  <hr />
+
+  <h2>BrownRook CA</h2>
+  <ul>
+    <li><a href="./brownrook-root-ca.cer">brownrook-root-ca.cer</a> <span class="small">(Root CA certificate)</span></li>
+    <li><a href="./brownrook-intermediate-ca.cer">brownrook-intermediate-ca.cer</a> <span class="small">(Intermediate CA certificate)</span></li>
+  </ul>
+
+  <h2>S/MIME</h2>
+  <ul>
+    <li><a href="./brownrook_smime.crt">brownrook_smime.crt</a></li>
+    <li><a href="./gmail.crt">gmail.crt</a></li>
+    <li><a href="./paul_macbookpro.crt">paul_macbookpro.crt</a></li>
+    <li><a href="./paul_macmini.crt">paul_macmini.crt</a></li>
+  </ul>
+
+  <hr />
+
+  <h2>Notes</h2>
+  <ul>
+    <li>These files are <strong>public certificates</strong> only.</li>
+    <li>Private keys (e.g., <code>.key</code>, <code>.p12</code>, <code>.pfx</code>) are never published.</li>
+  </ul>
+
+  <p class="small">
+    See also: <a href="./README.txt">README.txt</a>
+  </p>
+</body>
+</html>
