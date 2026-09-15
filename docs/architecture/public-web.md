@@ -52,3 +52,7 @@ The CloudFront/S3 landing page remains available when the IDC is offline; the
 live telemetry link may be unavailable during an IDC outage. Dashboard desired
 state, security validation, publication, and revocation are owned by KAN-119 in
 `home-budget-pipeline`.
+
+The landing page also links to `https://argocd.idc.brownrook.com`. That service
+is publicly reachable for GitOps status and administration but continues to
+require authentication.
