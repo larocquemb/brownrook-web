@@ -39,3 +39,16 @@ This layer must remain online even if the IDC site (`idc.brownrook.com`) is offl
 ## Layering rule
 - Public HA layer: `brownrook.com`, `www.brownrook.com` (CloudFront/S3)
 - Site anchor layer: `idc.brownrook.com` and `*.idc.brownrook.com` lives in `brownrook-edge`
+
+## Live telemetry demo
+
+The landing page links to an aggregate-only Grafana dashboard published from
+the site anchor layer. The external dashboard URL is intentionally
+passwordless and revocable. It does not enable anonymous access to the rest of
+Grafana, and the public dashboard contains no logs, traces, infrastructure
+identities, queue names, receipt identifiers, or financial data.
+
+The CloudFront/S3 landing page remains available when the IDC is offline; the
+live telemetry link may be unavailable during an IDC outage. Dashboard desired
+state, security validation, publication, and revocation are owned by KAN-119 in
+`home-budget-pipeline`.
